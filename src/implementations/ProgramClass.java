@@ -13,15 +13,15 @@ final class ProgramClass implements Program {
 	
 	private ProgramClass(String source, int counter) {
 		for (char c : source.toCharArray()) {
-			if (c == 43) // + (Plus)
+			if (c == '+') // + (Plus)
 				commands.add(Utility.I(this));
-			else if (c == 45) // - (Minus)
+			else if (c == '-') // - (Minus)
 				commands.add(Utility.D(this));
-			else if (c == 67) // C (Counter)
+			else if (c == 'C') // C (Counter)
 				commands.add(Utility.C(this));
-			else if (c == 80) // P (Program)
+			else if (c == 'P') // P (Program)
 				commands.add(Utility.P(this));			
-			else if (c == 87) // W (Weihnachten)
+			else if (c == 'W') // W (Weihnachten)
 				commands.add(Utility.W());
 			else
 				commands.add(Utility.NaC());
