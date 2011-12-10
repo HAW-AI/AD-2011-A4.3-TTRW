@@ -2,11 +2,11 @@ package implementations;
 
 import interfaces.Command;
 
-final class WClass implements Command {
+final class WCommand implements Command {
 	
-	private static Command instance = new WClass();
+	private static Command instance = new WCommand();
 	
-	private WClass() {}
+	private WCommand() {}
 	
 	public static Command newInstance() {
 		return instance;

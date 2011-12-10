@@ -8,23 +8,23 @@ public final class Utility {
 	private Utility() {}
 	
 	public static Command C(Program p) {
-		return CClass.newInstance(p);
+		return CCommand.newInstance(p);
 	}
 
 	public static Command D(Program p) {
-		return DClass.newInstance(p);
+		return DCommand.newInstance(p);
 	}
 	
 	public static Command I(Program p) {
-		return IClass.newInstance(p);
+		return ICommand.newInstance(p);
 	}
 	
 	public static Command P(Program p) {
-		return PClass.newInstance(p);
+		return PCommand.newInstance(p);
 	}	
 	
 	public static Command W() {
-		return WClass.newInstance();
+		return WCommand.newInstance();
 	}
 	
 	public static Command NaC() {

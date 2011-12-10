@@ -3,28 +3,27 @@ package implementations;
 import interfaces.Command;
 import interfaces.Program;
 
-final class IClass implements Command {
-
+final class DCommand implements Command {
+	
 	private final Program p;
 	
-	private IClass(Program p) {
+	private DCommand(Program p) {
 		this.p = p;
 	}
 	
 	public static Command newInstance(Program p) {
 		if (p == null)
-			Utility.NaC();
-		return new IClass(p);
+			return Utility.NaC();
+		return new DCommand(p);
 	}
 	
 	@Override
 	public void exec() {
-		p.increaseCounter();
+		p.decreaseCounter();
 	}
 	
 	@Override
 	public String toString() {
-		return "+";
+		return "-";
 	}
-	
 }
