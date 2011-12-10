@@ -1,6 +1,6 @@
 package implementations;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import interfaces.Command;
@@ -8,7 +8,7 @@ import interfaces.Program;
 
 final class ProgramClass implements Program {
 	
-	private final List<Command> commands = new ArrayList<Command>();
+	private final List<Command> commands = new LinkedList<Command>();
 	private int counter;
 	private final String source;
 	
