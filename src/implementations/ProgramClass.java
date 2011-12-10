@@ -33,7 +33,7 @@ final class ProgramClass implements Program {
 	
 	public static Program newInstance(String source, int counter) {
 		if (source == null)
-			Utility.NaP();
+			return Utility.NaP();
 		return new ProgramClass(source, counter);
 	}
 	 
