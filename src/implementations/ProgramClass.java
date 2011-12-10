@@ -1,0 +1,67 @@
+package implementations;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import interfaces.Command;
+import interfaces.Program;
+
+final class ProgramClass implements Program {
+	
+	final List<Command> commands = new ArrayList<Command>();
+	int counter;
+	
+	private ProgramClass(String source, int counter) {
+		for (char c : source.toCharArray()) {
+			if (c == 43) // + (Plus)
+				commands.add(Utility.I(this));
+			else if (c == 45) // - (Minus)
+				commands.add(Utility.D(this));
+			else if (c == 67) // C (Counter)
+				commands.add(Utility.C(this));
+			else if (c == 80) // P (Program)
+				commands.add(Utility.P(this));			
+			else if (c == 87) // W (Weihnachten)
+				commands.add(Utility.W());
+			else
+				commands.add(Utility.NaC());
+		}
+		this.counter = counter;
+	}
+	
+	public static Program newInstance(String source, int counter) {
+		if (source == null)
+			Utility.NaP();
+		return new ProgramClass(source, counter);
+	}
+	 
+	public void exec() {
+		for (Command c : commands) {
+			c.exec();
+		}
+	}
+
+	@Override
+	public int getCounter() {
+		return counter;
+	}
+
+	@Override
+	public void increaseCounter() {
+		counter++;
+	}
+	
+	@Override
+	public void decreaseCounter() {
+		counter--;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		for (Command c : commands) {
+			sb.append(c.toString());
+		}
+		return sb.toString();
+	}
+}
