@@ -10,6 +10,7 @@ final class ProgramClass implements Program {
 	
 	final List<Command> commands = new ArrayList<Command>();
 	int counter;
+	private final String source;
 	
 	private ProgramClass(String source, int counter) {
 		for (char c : source.toCharArray()) {
@@ -27,6 +28,7 @@ final class ProgramClass implements Program {
 				commands.add(Utility.NaC());
 		}
 		this.counter = counter;
+		this.source = source;
 	}
 	
 	public static Program newInstance(String source, int counter) {
@@ -58,10 +60,6 @@ final class ProgramClass implements Program {
 	
 	@Override
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		for (Command c : commands) {
-			sb.append(c.toString());
-		}
-		return sb.toString();
+		return source;
 	}
 }
