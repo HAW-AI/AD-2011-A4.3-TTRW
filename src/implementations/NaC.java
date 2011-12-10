@@ -13,9 +13,7 @@ final class NaC implements Command {
 	}
 
 	@Override
-	public void exec() {
-		System.out.println(toString());
-	}
+	public void exec() {}
 	
 	@Override
 	public String toString() {
