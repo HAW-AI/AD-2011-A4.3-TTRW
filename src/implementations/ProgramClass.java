@@ -8,8 +8,8 @@ import interfaces.Program;
 
 final class ProgramClass implements Program {
 	
-	final List<Command> commands = new ArrayList<Command>();
-	int counter;
+	private final List<Command> commands = new ArrayList<Command>();
+	private int counter;
 	private final String source;
 	
 	private ProgramClass(String source, int counter) {
